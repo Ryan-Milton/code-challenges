@@ -31,12 +31,12 @@ const pushIntoSecond = (arr) => {
 
 const addBonusPoints = (arr) => {
   // Solution code here...
-  let newArray = [];
+  let bonusPoints = [];
   for (let value of arr) {
     value += 5;
-    newArray.push(value);
+    bonusPoints.push(value);
   }
-  return newArray;
+  return bonusPoints;
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -51,7 +51,15 @@ const addBonusPoints = (arr) => {
 
 const addCurve = (arr) => {
   // Solution code here...
+  let curvedScores = [];
+  for (let value in arr) {
+    let newValue = parseInt(value);
+    newValue *= 105%
+    curvedScores.push(newValue);
+  }
+  return curvedScores;
 }
+
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
@@ -205,15 +213,15 @@ describe('Testing challenge 2', () => {
   });
 });
 
-// describe('Testing challenge 3', () => {
-//   test('It should increase each raw score by 5%', () => {
-//     const resultScores = addCurve([55, 79, 100, 85, 92]);
-//     const expectedScores = [ 57.75, 82.95, 105, 89.25, 96.60000000000001 ];
-//     for (let i in expectedScores) {
-//       expect(resultScores[i]).toBeCloseTo(expectedScores[i]);
-//     }
-//   });
-// });
+describe('Testing challenge 3', () => {
+  test('It should increase each raw score by 5%', () => {
+    const resultScores = addCurve([55, 79, 100, 85, 92]);
+    const expectedScores = [ 57.75, 82.95, 105, 89.25, 96.60000000000001 ];
+    for (let i in expectedScores) {
+      expect(resultScores[i]).toBeCloseTo(expectedScores[i]);
+    }
+  });
+});
 
 // describe('Testing challenge 4', () => {
 //   test('It should return the message with all uppercase characters', () => {
