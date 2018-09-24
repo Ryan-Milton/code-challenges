@@ -167,8 +167,7 @@ const characters = [
 
 const getCharactersWithoutChildren = (input) => {
   // Solution code here...
-  let freePeople = input.filter( (peeps) => !peeps.children);
-  return freePeople;
+  return input.filter( (freePeople) => !freePeople.children);
 };
 
 /* ------------------------------------------------------------------------------------------------
