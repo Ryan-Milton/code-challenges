@@ -11,7 +11,11 @@
 
 const firstLetters = (strs) => {
   // Solution code here...
-  return strs.charAt(0);
+  const arr = [];
+  for(let i = 0; i <strs.length; i++) {
+    arr.push(strs[i].charAt(0));
+  }
+  return arr;
 };
 
 // ------------------------------------------------------------------------------------------------
